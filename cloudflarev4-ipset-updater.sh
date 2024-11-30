@@ -80,7 +80,7 @@ do
 		echo "[VERBOSE] Removing {$ip} from {$IPSET_NAME}"
 	fi
 
-	pvesh delete cluster/firewall/ipset/cloudflarev4/$ip
+	pvesh delete cluster/firewall/ipset/$IPSET_NAME/$ip
 done
 
 # Add new ip addresses
@@ -90,5 +90,5 @@ do
         echo "[VERBOSE] Adding {$ip} to {$IPSET_NAME}"
     fi
 
-    pvesh create cluster/firewall/ipset/cloudflarev4 --cidr $ip
+    pvesh create cluster/firewall/ipset/$IPSET_NAME --cidr $ip
 done
